@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <title>Đầm Sen Pathfinding</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header><h1>SmartWay SenPath</h1></header>
+
+  <div class="layout">
+    <section class="controls">
+      <label>Thuật toán</label>
+      <select id="algo">
+        <option value="astar">A*</option>
+        <option value="dijkstra">Dijkstra</option>
+      </select>
+      <button id="btnReset">Reset</button>
+      <button id="btnRandom">Random A/B</button>
+
+      <p id="info">Chọn 2 điểm A và B để tìm đường.</p>
+
+      <!-- Lộ trình rút gọn  -->
+      <div id="routeInline" class="route-inline" aria-live="polite"></div>
+
+      <!-- Hộp gợi ý lộ trình  -->
+      <div id="routeBox" class="route-box">
+        <div class="route-title">Gợi ý lộ trình</div>
+        <div id="routeSummary" class="route-summary">
+          Chọn 2 điểm A và B để tìm đường.
+        </div>
+        <div class="route-scroll">
+          <ol id="routeSteps" class="route-steps"></ol>
+        </div>
+      </div>
+    </section>
+
+    <canvas id="scene"></canvas>
+  </div>
+
+  <script src="graph.js"></script>
+  <script src="algo.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

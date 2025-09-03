@@ -1,0 +1,146 @@
+/* layout cơ bản */
+html, body {
+  height: 100%;
+  margin: 0;
+  background:#0b1322;
+  color:#e6ecff;
+  font-family: system-ui, sans-serif;
+}
+
+header {
+  padding: 14px 16px;
+  background:#0f1a2f;
+  border-bottom:1px solid rgba(255,255,255,.06);
+}
+
+h1 {
+  margin:0;
+  font-size:28px;
+  font-weight:800;
+  letter-spacing:.3px;
+}
+
+.layout {
+  display: flex;
+  gap: 14px;
+  padding: 14px 16px;
+  box-sizing: border-box;
+  height: calc(100% - 64px); /* trừ header */
+}
+
+/* panel trái */
+.controls {
+  width: 260px;
+  background:#0c1426;
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:12px;
+  padding:12px;
+  position:relative;
+  z-index: 1;              /* đảm bảo không bị canvas đè */
+}
+
+.controls label {
+  display:block;
+  margin-bottom:6px;
+  color:#cfd8ea;
+}
+
+.controls select {
+  width:100%;
+  padding:6px 8px;
+  border-radius:8px;
+  border:1px solid #2a3857;
+  background:#0f1a2f;
+  color:#e6ecff;
+}
+
+.controls button {
+  margin-top:8px;
+  margin-right:6px;
+  padding:6px 10px;
+  border-radius:8px;
+  border:1px solid #2a3857;
+  background:#12213a;
+  color:#e6ecff;
+  cursor:pointer;
+  transition: background .2s;
+}
+.controls button:hover {
+  background:#173052;
+}
+
+/* route inline (breadcrumb ngắn) */
+.route-inline {
+  margin-top:12px;
+  padding:8px 10px;
+  border-radius:8px;
+  background:rgba(255,255,255,.04);
+  font-size:13px;
+  line-height:1.5;
+  color:#d1d9ec;
+}
+.route-inline span {
+  color:#93c5fd;
+  font-weight:600;
+}
+.route-inline .sep {
+  margin: 0 4px;
+  color:#6b7280;
+}
+
+/* route box chi tiết */
+.route-box {
+  margin-top: 12px;
+  padding:10px;
+  background:rgba(255,255,255,.04);
+  border-radius:10px;
+}
+.route-title {
+  font-weight:700;
+  margin-bottom:6px;
+}
+.route-summary {
+  color:#aab3c5;
+  margin-bottom:6px;
+  font-size:13px;
+}
+.route-steps {
+  margin:0;
+  padding-left:18px;
+  max-height:220px;
+  overflow:auto;
+  font-size:13px;
+}
+.route-steps li {
+  margin: 4px 0;
+  cursor: pointer;
+  padding: 2px 0;
+}
+.route-steps li:hover {
+  color: #e5f0ff;
+}
+.route-steps li strong {
+  color:#93c5fd;
+  margin-right: 4px;
+}
+
+/* custom scroll */
+.route-steps::-webkit-scrollbar {
+  width:6px;
+}
+.route-steps::-webkit-scrollbar-thumb {
+  background:#2a3857;
+  border-radius:4px;
+}
+.route-steps::-webkit-scrollbar-thumb:hover {
+  background:#3d4f73;
+}
+
+/* canvas */
+#scene {
+  flex: 1;
+  background:#0a1422;
+  border:1px solid rgba(255,255,255,.06);
+  border-radius:12px;
+}
+.layout > #scene { min-width: 0; } /* chống tràn */
